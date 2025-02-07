@@ -1,4 +1,4 @@
-const int NUMERO_ETUDIANT = 2407822;
+const String NUMERO_ETUDIANT = 2407822;
 const int PIN_HOLE = 13;
 const int CLIGNOTE= 2;
 const int MAX =255;
@@ -14,7 +14,8 @@ void setup() {
 }
 void allumer() {
 
-  Serial.println("Allume -2407822");
+  Serial.print("Allume -");
+  Serial.println(NUMERO_ETUDIANT);
   
   digitalWrite(PIN_HOLE, HIGH);//permet d'allumer la LED
   delay(2000);
@@ -22,7 +23,8 @@ void allumer() {
 
 }
 void clignotement() {
-Serial.println("Clignotement -2407822");
+Serial.print("clignotement -");
+  Serial.println(NUMERO_ETUDIANT);
 for(int i=0; i<CLIGNOTE; i++){
    digitalWrite(PIN_HOLE, HIGH);//permet d'allumer la LED
   delay(250);
@@ -32,7 +34,8 @@ for(int i=0; i<CLIGNOTE; i++){
 
 }
 void variation() {
-  Serial.println("Variation -2407822");
+ Serial.print("variation -");
+  Serial.println(NUMERO_ETUDIANT);
 for(int i=0; i< MAX; i++ ){
   analogWrite(PIN_HOLE, i);//permet d'augmenter ou diminuer l'intensité de la lumiere 
   delay(STATEDELAY);//nombre de milliseconde pour ma variation
@@ -40,7 +43,8 @@ for(int i=0; i< MAX; i++ ){
 
 }
 void eteint() {
-  Serial.println("eteindre -2407822");
+  Serial.print("eteint -");
+  Serial.println(NUMERO_ETUDIANT);
   digitalWrite(PIN_HOLE, LOW);//permet d'eteindre la LED 
   delay(2000);
 }
